@@ -7,16 +7,22 @@ class UserController {
         const password = data.password;
         try {
             const userInDatabase = await userModal.findOne({ userName: userName });
+           
             if (userInDatabase != null) {
                 if (userInDatabase.password == password) {
-                    return res.status(200).json("Login Successfull");
+                    const email=userInDatabase.email;
+                    const userInformation={
+                        userName:userName,
+                        userEmail:email
+                    }
+                    return res.status(200).json({message:"Login Successfull",user:userInformation});
                 }
-                return res.status(200).json("Password not matched");
+                return res.status(200).json({message:"Password not matched"});
             }
-            return res.status(200).json("UserName not exist");
+            return res.status(200).json({message:"UserName not exist"});
         } catch (err) {
             console.log("errr in login ", err);
-            return res.status(403).json("Internal server error");
+            return res.status(403).json({message:"Internal server error"});
         }
     }
 
