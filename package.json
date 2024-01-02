@@ -18,6 +18,7 @@
     "express": "^4.18.2",
     "mongoose": "^8.0.3",
     "nodemailer": "^6.9.8",
+    "openai": "^4.24.1",
     "otp-generator": "^4.0.1",
     "two-step-auth": "^1.1.2"
   },
