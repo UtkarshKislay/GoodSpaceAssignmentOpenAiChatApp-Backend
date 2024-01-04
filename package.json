@@ -20,7 +20,8 @@
     "nodemailer": "^6.9.8",
     "openai": "^4.24.1",
     "otp-generator": "^4.0.1",
-    "two-step-auth": "^1.1.2"
+    "two-step-auth": "^1.1.2",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "nodemon": "^3.0.2"
